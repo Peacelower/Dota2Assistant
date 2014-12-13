@@ -15,10 +15,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-public class SensorTestActivity extends Activity implements SensorEventListener {
+public class FlipSensorDetector extends Activity implements SensorEventListener {
     private SensorManager sensorManager;
-    private boolean color = false;
-    private View view;
+    //private boolean color = false;
+    //private View view;
     private long lastUpdate;
 
 
@@ -31,9 +31,9 @@ public class SensorTestActivity extends Activity implements SensorEventListener 
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        view = findViewById(R.id.textViewStatus);
-        view.setBackgroundColor(Color.GREEN);
+        //setContentView(R.layout.main);
+        //view = findViewById(R.id.textViewStatus);
+        //view.setBackgroundColor(Color.GREEN);
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         lastUpdate = System.currentTimeMillis();
@@ -63,14 +63,17 @@ public class SensorTestActivity extends Activity implements SensorEventListener 
                 return;
             }
             lastUpdate = actualTime;
+
+            /*
             Toast.makeText(this, "Device was shuffed", Toast.LENGTH_SHORT)
                     .show();
             if (color) {
-                view.setBackgroundColor(Color.GREEN);
+                //view.setBackgroundColor(Color.GREEN);
             } else {
-                view.setBackgroundColor(Color.RED);
+                //view.setBackgroundColor(Color.RED);
             }
             color = !color;
+            */
         }
     }
 
