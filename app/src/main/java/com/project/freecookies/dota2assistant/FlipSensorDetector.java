@@ -4,23 +4,18 @@ package com.project.freecookies.dota2assistant;
  * Created by Jefim on 12/13/2014.
  */
 import android.app.Activity;
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 public class FlipSensorDetector extends Activity implements SensorEventListener {
     private SensorManager sensorManager;
-    //private boolean color = false;
-    //private View view;
     private long lastUpdate;
-
+    public float axisX, axisY, axisZ;
 
     /** Called when the activity is first created. */
 
@@ -31,18 +26,20 @@ public class FlipSensorDetector extends Activity implements SensorEventListener 
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.main);
-        //view = findViewById(R.id.textViewStatus);
-        //view.setBackgroundColor(Color.GREEN);
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         lastUpdate = System.currentTimeMillis();
+
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             getAccelerometer(event);
+            float[] values = event.values;
+            axisX = values[0];
+            axisY = values[1];
+            axisZ = values[2];
         }
 
     }
@@ -63,17 +60,6 @@ public class FlipSensorDetector extends Activity implements SensorEventListener 
                 return;
             }
             lastUpdate = actualTime;
-
-            /*
-            Toast.makeText(this, "Device was shuffed", Toast.LENGTH_SHORT)
-                    .show();
-            if (color) {
-                //view.setBackgroundColor(Color.GREEN);
-            } else {
-                //view.setBackgroundColor(Color.RED);
-            }
-            color = !color;
-            */
         }
     }
 
