@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="X axis"
+        android:id="@+id/textXLabel"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/textYLabel"
+        android:layout_alignStart="@+id/textYLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="N/A"
+        android:id="@+id/textX"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/textXLabel"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Y axis"
+        android:id="@+id/textYLabel"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/textX"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="N/A"
+        android:id="@+id/textY"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/textYLabel"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Z axis"
+        android:id="@+id/textZLabel"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/textY"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="N/A"
+        android:id="@+id/textZ"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/textZLabel"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

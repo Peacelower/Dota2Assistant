@@ -34,7 +34,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         lastUpdate = System.currentTimeMillis();
 
     }
-
+    
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {

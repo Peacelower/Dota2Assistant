@@ -21,7 +21,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="X axis"
         android:id="@+id/textViewXLabel"
-        android:layout_alignBottom="@+id/mediaController"
+        android:layout_below="@+id/mediaController"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="N/A"
         android:id="@+id/textViewX"
-        android:layout_below="@+id/mediaController"
+        android:layout_below="@+id/textViewXLabel"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -67,6 +67,14 @@
         android:text="N/A"
         android:id="@+id/textViewZ"
         android:layout_below="@+id/textViewZLabel"
-        android:layout_alignLeft="@+id/textViewY"
-        android:layout_alignStart="@+id/textViewY" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Accelerator"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
