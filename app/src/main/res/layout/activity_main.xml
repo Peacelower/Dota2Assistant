@@ -31,7 +31,8 @@
         android:text="N/A"
         android:id="@+id/textViewX"
         android:layout_below="@+id/textViewXLabel"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/textViewXLabel"
+        android:layout_alignStart="@+id/textViewXLabel" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +50,8 @@
         android:text="N/A"
         android:id="@+id/textViewY"
         android:layout_below="@+id/textViewYLabel"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/textViewYLabel"
+        android:layout_alignStart="@+id/textViewYLabel" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,7 +69,8 @@
         android:text="N/A"
         android:id="@+id/textViewZ"
         android:layout_below="@+id/textViewZLabel"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/textViewZLabel"
+        android:layout_alignStart="@+id/textViewZLabel" />
 
     <TextView
         android:layout_width="wrap_content"

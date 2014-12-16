@@ -2,10 +2,12 @@ package com.project.freecookies.dota2assistant;
 
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -13,12 +15,14 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.support.v4.view.MotionEventCompat;
 
 
 public class MainActivity extends Activity implements SensorEventListener {
     private SensorManager sensorManager;
     private long lastUpdate;
     public float axisX, axisY, axisZ;
+    private GestureDetector gestureDetector;
 
     /** Called when the activity is first created. */
 
@@ -34,11 +38,36 @@ public class MainActivity extends Activity implements SensorEventListener {
         lastUpdate = System.currentTimeMillis();
 
     }
-    
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+
+        int action = MotionEventCompat.getActionMasked(event);
+
+        switch(action) {
+            case (MotionEvent.ACTION_DOWN) :
+                Intent myIntent = new Intent(this,FlipSensorDetector.class);
+                startActivity(myIntent);
+                return true;
+            case (MotionEvent.ACTION_MOVE) :
+
+                return true;
+            case (MotionEvent.ACTION_UP) :
+
+                return true;
+            case (MotionEvent.ACTION_CANCEL) :
+
+                return true;
+            case (MotionEvent.ACTION_OUTSIDE) :
+
+                return true;
+            default :
+                return super.onTouchEvent(event);
+        }
+    }
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            getAccelerometer(event);
             float[] values = event.values;
             TextView txt2change = (TextView)findViewById(R.id.textViewX);
             axisX = values[0];
